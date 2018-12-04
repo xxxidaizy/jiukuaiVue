@@ -81,10 +81,12 @@
 		background-color: rgb(248, 248, 248);
 		border: none;
 		border-left: 0.02rem solid rgb(219, 219, 219);
-		color: rgb(200,200,200);
 		font-size: 0.28rem;
 		width: 70%;
 		padding-left: 0.3rem;
+	}
+	.jk-search input::-webkit-input-placeholder{
+		color: rgb(200,200,200);
 	}
 	/*租赁方式*/
 	.jk-rent a{
