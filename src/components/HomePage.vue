@@ -55,22 +55,66 @@
 		</div>
 		<!--房源列表-->
 		<div class="jk-houseList">
-			<div></div>
+			<div class="jk-houseList-item">
+				<div class="jk-houseList-info jk-houseList-img">
+					<img :src="houseInfoImg" />
+				</div>
+				<div class="jk-houseList-info jk-houseList-text">
+					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+					<p class="houseRent">1700/月</p>
+					<p class="houseArea">15m² | 南 | 看丹桥</p>
+					<p class="houseFeature">
+						<span>押一付一</span>
+						<span>独立卫浴</span>
+						<span>有阳台</span>
+					</p>
+				</div>
+			</div>
+			<div class="jk-houseList-item">
+				<div class="jk-houseList-info jk-houseList-img">
+					<img :src="houseInfoImg" />
+				</div>
+				<div class="jk-houseList-info jk-houseList-text">
+					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+					<p class="houseRent">1700/月</p>
+					<p class="houseArea">15m² | 南 | 看丹桥</p>
+					<p class="houseFeature">
+						<span>押一付一</span>
+						<span>独立卫浴</span>
+						<span>有阳台</span>
+					</p>
+				</div>
+			</div>
+			<div class="jk-houseList-item">
+				<div class="jk-houseList-info jk-houseList-img">
+					<img :src="houseInfoImg" />
+				</div>
+				<div class="jk-houseList-info jk-houseList-text">
+					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+					<p class="houseRent">1700/月</p>
+					<p class="houseArea">15m² | 南 | 看丹桥</p>
+					<p class="houseFeature">
+						<span>押一付一</span>
+						<span>独立卫浴</span>
+						<span>有阳台</span>
+					</p>
+				</div>
+			</div>
 		</div>
 		<div class="jk-footer">
 			<!--首页-->
 			<div class="jk-footer-item jk-footer-home active">
-				<img :src="footer_home" />
+				<img :src="footer_home_blue" />
 				<p>首页</p>
 			</div>
 			<!--发布-->
 			<div class="jk-footer-item jk-footer-publish">
-				<img :src="footer_publish" />
+				<img :src="footer_publish_gray" />
 				<p>发布</p>
 			</div>
 			<!--我-->
 			<div class="jk-footer-item jk-footer-self">
-				<img :src="footer_self" />
+				<img :src="footer_self_gray" />
 				<p>我</p>
 			</div>
 		</div>
@@ -80,17 +124,19 @@
 </template>
 
 <script>
-	import rentImg1 from '../assets/icon-func1.png';
+	import rentImg1 from '../assets/icon-func1.png'; 
 	import rentImg2 from '../assets/icon-func2.png';
 	import rentImg3 from '../assets/icon-func3.png';
 	import icon_dropdown from '../assets/icon-dropdown.png';
 	import icon_sort from '../assets/icon-sort.png';
 	import bannerImg from '../assets/banner.jpg';
-	import footer_home from '../assets/footer_home.png';
-	import footer_publish from '../assets/footer_publish.png';
-	import footer_self from '../assets/footer_self.png';
+	import footer_home_blue from '../assets/footer_home_blue.png';
+	import footer_publish_gray from '../assets/footer_publish_gray.png';
+	import footer_self_gray from '../assets/footer_self_gray.png';
+	import houseInfoImg from '../assets/houseInfoImg.png';
 
 	export default {
+		
 		name: 'HomePage',
 		data() {
 			return {
@@ -100,10 +146,11 @@
 				icon_dropdown: icon_dropdown,
 				icon_sort: icon_sort,
 				bannerImg: bannerImg,
-				footer_home: footer_home,
-				footer_publish: footer_publish,
-				footer_self: footer_self,
-
+				footer_home_blue: footer_home_blue,
+				footer_publish_gray: footer_publish_gray,
+				footer_self_gray: footer_self_gray,
+				houseInfoImg:houseInfoImg
+				
 			}
 		},
 		beforeCreate() {
@@ -119,7 +166,7 @@
 <style>
 	body {
 		font-family: "microsoft yahei";
-		height: 100%;
+		max-height: 11.51rem;
 	}
 	/*搜索*/
 	.jk-search {
@@ -160,6 +207,7 @@
 	}
 	.jk-rent .jk-rent-item,
 	.jk-filter .jk-filter-item,
+	.jk-houseList-info,
 	.jk-footer .jk-footer-item {
 		display: inline-block;
 	}
@@ -205,10 +253,54 @@
 		width: 6.84rem;
 		margin: auto;
 		margin-top: 0.3rem;
-		margin-bottom: 0.3rem;
 	}
 	.jk-banner img {
 		width: 100%;
+	}
+	
+	/*房源列表*/
+	.jk-houseList{
+		width: 6.86rem;
+		margin: auto;
+	}
+	.jk-houseList-item{
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+		border-top: 0.03rem solid rgb(229,229,229);
+	}
+	.jk-houseList-item:first-child{
+		border: none;
+	}
+	.jk-houseList-img img{
+		width: 2.41rem;
+		margin-right: 0.22rem;
+		vertical-align: bottom;
+	}
+	.jk-houseList-text .houseTitle{
+		font-size: 0.28rem;
+		color: rgb(0,0,0);
+		font-weight: 700;
+		margin-bottom: 0.2rem;
+	}
+	.jk-houseList-text .houseRent{
+		font-size: 0.28rem;
+		color: rgb(228,80,0);
+		margin-bottom: 0.1rem;
+	}
+	.jk-houseList-text .houseArea{
+		font-size: 0.22rem;
+		color: rgb(136,136,136);
+		margin-bottom: 0.1rem;
+	}
+	.jk-houseList-text .houseFeature{
+		font-size:0.18rem;
+		color: rgb(136,136,136);
+	}
+	.jk-houseList-text .houseFeature span{
+		height: 0.3rem;
+		border: 0.01rem solid rgb(153,153,153);
+		padding:0.05rem 0.11rem;
+		margin-right: 0.1rem;
 	}
 	
 	/*footer*/
