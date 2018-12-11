@@ -44,4 +44,7 @@ export default{
 			},false);
 		}		
 	},
+	
+	//vue-touch
+	
 }

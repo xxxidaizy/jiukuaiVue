@@ -149,7 +149,7 @@
 				footer_home_blue: footer_home_blue,
 				footer_publish_gray: footer_publish_gray,
 				footer_self_gray: footer_self_gray,
-				houseInfoImg:houseInfoImg
+				houseInfoImg:houseInfoImg,
 				
 			}
 		},
