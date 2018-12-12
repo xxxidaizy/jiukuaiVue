@@ -1,57 +1,60 @@
 <template>
 	<div class="jk-homepage">
-		<!--搜索框-->
-		<div class="jk-search">
-			<span>北京</span>
-			<input type="text" placeholder="您想住哪儿？" />
-		</div>
-		<!--租赁方式-->
-		<div class="jk-rent">
-			<div class="jk-rent-item">
-				<a href="javascript:;">
-					<img :src="rentImg1" alt="整租" />
-					<p>整租</p>
-				</a>
+		<div class="jk-fixed">
+			<!--搜索框-->
+			<div class="jk-search">
+				<!--<span>北京</span>-->
+				<router-link :to="'CurrentCity'">北京</router-link>
+				<input type="text" placeholder="您想住哪儿？" />
 			</div>
-			<div class="jk-rent-item" style="margin: auto 1.52rem;">
-				<a href="javascript:;">
-					<img :src="rentImg2" alt="合租" />
-					<p>合租</p>
-				</a>
+			<!--租赁方式-->
+			<div class="jk-rent">
+				<div class="jk-rent-item">
+					<a href="javascript:;">
+						<img :src="rentImg1" alt="整租" />
+						<p>整租</p>
+					</a>
+				</div>
+				<div class="jk-rent-item" style="margin: auto 1.52rem;">
+					<a href="javascript:;">
+						<img :src="rentImg2" alt="合租" />
+						<p>合租</p>
+					</a>
+				</div>
+				<div class="jk-rent-item">
+					<a href="javascript:;">
+						<img :src="rentImg3" alt="短租" />
+						<p>短租</p>
+					</a>
+				</div>
 			</div>
-			<div class="jk-rent-item">
-				<a href="javascript:;">
-					<img :src="rentImg3" alt="短租" />
-					<p>短租</p>
-				</a>
+			<!--筛选条件-->
+			<div class="jk-filter">
+				<!--区域-->
+				<div class="jk-filter-item jk-filter-area">
+					<span>区域 <img :src="icon_dropdown" /></span>
+				</div>
+				<!--租金-->
+				<div class="jk-filter-item jk-filter-rent">
+					<span>租金 <img :src="icon_dropdown" /></span>
+				</div>
+				<!--户型-->
+				<div class="jk-filter-item jk-filter-houseType">
+					<span>户型 <img :src="icon_dropdown" /></span>
+				</div>
+				<!--筛选-->
+				<div class="jk-filter-item jk-filter-select">
+					<span>筛选 <img :src="icon_dropdown" /></span>
+				</div>
+				<!--排序-->
+				<div class="jk-filter-item jk-filter-sort" style="margin: auto;">
+					<span><img :src="icon_sort" /></span>
+				</div>
 			</div>
-		</div>
-		<!--筛选条件-->
-		<div class="jk-filter">
-			<!--区域-->
-			<div class="jk-filter-item jk-filter-area">
-				<span>区域 <img :src="icon_dropdown" /></span>
+			<!--banner-->
+			<div class="jk-banner">
+				<img :src="bannerImg" />
 			</div>
-			<!--租金-->
-			<div class="jk-filter-item jk-filter-rent">
-				<span>租金 <img :src="icon_dropdown" /></span>
-			</div>
-			<!--户型-->
-			<div class="jk-filter-item jk-filter-houseType">
-				<span>户型 <img :src="icon_dropdown" /></span>
-			</div>
-			<!--筛选-->
-			<div class="jk-filter-item jk-filter-select">
-				<span>筛选 <img :src="icon_dropdown" /></span>
-			</div>
-			<!--排序-->
-			<div class="jk-filter-item jk-filter-sort" style="margin: auto;">
-				<span><img :src="icon_sort" /></span>
-			</div>
-		</div>
-		<!--banner-->
-		<div class="jk-banner">
-			<img :src="bannerImg" />
 		</div>
 		<!--房源列表-->
 		<div class="jk-houseList">
@@ -71,6 +74,49 @@
 				</div>
 			</div>
 			<div class="jk-houseList-item">
+				<div class="jk-houseList-info jk-houseList-img">
+					<img :src="houseInfoImg" />
+				</div>
+				<div class="jk-houseList-info jk-houseList-text">
+					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+					<p class="houseRent">1700/月</p>
+					<p class="houseArea">15m² | 南 | 看丹桥</p>
+					<p class="houseFeature">
+						<span>押一付一</span>
+						<span>独立卫浴</span>
+						<span>有阳台</span>
+					</p>
+				</div>
+			</div>
+				<div class="jk-houseList-item">
+				<div class="jk-houseList-info jk-houseList-img">
+					<img :src="houseInfoImg" />
+				</div>
+				<div class="jk-houseList-info jk-houseList-text">
+					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+					<p class="houseRent">1700/月</p>
+					<p class="houseArea">15m² | 南 | 看丹桥</p>
+					<p class="houseFeature">
+						<span>押一付一</span>
+						<span>独立卫浴</span>
+						<span>有阳台</span>
+					</p>
+				</div>
+			</div>	<div class="jk-houseList-item">
+				<div class="jk-houseList-info jk-houseList-img">
+					<img :src="houseInfoImg" />
+				</div>
+				<div class="jk-houseList-info jk-houseList-text">
+					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+					<p class="houseRent">1700/月</p>
+					<p class="houseArea">15m² | 南 | 看丹桥</p>
+					<p class="houseFeature">
+						<span>押一付一</span>
+						<span>独立卫浴</span>
+						<span>有阳台</span>
+					</p>
+				</div>
+			</div>	<div class="jk-houseList-item">
 				<div class="jk-houseList-info jk-houseList-img">
 					<img :src="houseInfoImg" />
 				</div>
@@ -124,7 +170,8 @@
 </template>
 
 <script>
-	import rentImg1 from '../assets/icon-func1.png'; 
+	
+	import rentImg1 from '../assets/icon-func1.png';
 	import rentImg2 from '../assets/icon-func2.png';
 	import rentImg3 from '../assets/icon-func3.png';
 	import icon_dropdown from '../assets/icon-dropdown.png';
@@ -136,7 +183,7 @@
 	import houseInfoImg from '../assets/houseInfoImg.png';
 
 	export default {
-		
+
 		name: 'HomePage',
 		data() {
 			return {
@@ -149,8 +196,8 @@
 				footer_home_blue: footer_home_blue,
 				footer_publish_gray: footer_publish_gray,
 				footer_self_gray: footer_self_gray,
-				houseInfoImg:houseInfoImg,
-				
+				houseInfoImg: houseInfoImg,
+
 			}
 		},
 		beforeCreate() {
@@ -164,36 +211,21 @@
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style>
-	body {
-		font-family: "microsoft yahei";
-		max-height: 11.51rem;
+	@import url("../css/common.css");
+	
+	.jk-fixed{
+		position: fixed;
+		top: 0;
+		background-color: rgb(255, 255, 255);
+		padding-bottom: 0.3rem;
 	}
+	
 	/*搜索*/
-	.jk-search {
-		margin: auto;
-		margin-top: 0.2rem;
-		padding: 0.4rem;
-		padding-top: 0.2rem;
-		width: 6.8rem;
-		height: 0.28rem;
-		border-radius: 0.45rem;
-		background-color: rgb(248, 248, 248);
-		vertical-align: middle;
-	}
-	.jk-search span {
+	.jk-search a{
 		margin-left: 0.1rem;
 		color: rgb(51, 51, 51);
 		text-align: center;
 		font-size: 0.28rem;
-	}
-	.jk-search input {
-		margin-left: 0.2rem;
-		background-color: rgb(248, 248, 248);
-		border: none;
-		border-left: 0.02rem solid rgb(219, 219, 219);
-		font-size: 0.28rem;
-		width: 70%;
-		padding-left: 0.3rem;
 	}
 	.jk-search input::-webkit-input-placeholder {
 		color: rgb(200, 200, 200);
@@ -237,6 +269,7 @@
 	.jk-filter .jk-filter-item {
 		margin-right: 0.86rem;
 	}
+	
 	.jk-filter .jk-filter-item span {
 		color: rgb(51, 51, 51);
 		font-size: 0.24rem;
@@ -259,58 +292,60 @@
 	}
 	
 	/*房源列表*/
-	.jk-houseList{
+	.jk-houseList {
 		width: 6.86rem;
 		margin: auto;
+		margin-bottom: 2rem;
+		margin-top: 6.2rem;
 	}
-	.jk-houseList-item{
+	.jk-houseList-item {
 		padding-top: 0.3rem;
 		padding-bottom: 0.3rem;
-		border-top: 0.03rem solid rgb(229,229,229);
+		border-top: 0.03rem solid rgb(229, 229, 229);
 	}
-	.jk-houseList-item:first-child{
+	.jk-houseList-item:first-child {
 		border: none;
 	}
-	.jk-houseList-img img{
+	.jk-houseList-img img {
 		width: 2.41rem;
 		margin-right: 0.22rem;
 		vertical-align: bottom;
 	}
-	.jk-houseList-text .houseTitle{
+	.jk-houseList-text .houseTitle {
 		font-size: 0.28rem;
-		color: rgb(0,0,0);
+		color: rgb(0, 0, 0);
 		font-weight: 700;
 		margin-bottom: 0.2rem;
 	}
-	.jk-houseList-text .houseRent{
+	.jk-houseList-text .houseRent {
 		font-size: 0.28rem;
-		color: rgb(228,80,0);
+		color: rgb(228, 80, 0);
 		margin-bottom: 0.1rem;
 	}
-	.jk-houseList-text .houseArea{
+	.jk-houseList-text .houseArea {
 		font-size: 0.22rem;
-		color: rgb(136,136,136);
+		color: rgb(136, 136, 136);
 		margin-bottom: 0.1rem;
 	}
-	.jk-houseList-text .houseFeature{
-		font-size:0.18rem;
-		color: rgb(136,136,136);
+	.jk-houseList-text .houseFeature {
+		font-size: 0.18rem;
+		color: rgb(136, 136, 136);
 	}
-	.jk-houseList-text .houseFeature span{
+	.jk-houseList-text .houseFeature span {
 		height: 0.3rem;
-		border: 0.01rem solid rgb(153,153,153);
-		padding:0.05rem 0.11rem;
+		border: 0.01rem solid rgb(153, 153, 153);
+		padding: 0.05rem 0.11rem;
 		margin-right: 0.1rem;
 	}
 	
 	/*footer*/
 	.jk-footer {
-		height: 1.5rem;
+		height: 1.15rem;
 		width: 100%;
 		position: fixed;
 		margin: auto;
 		text-align: center;
-		background-color: rgb(255,255,255);
+		background-color: rgb(255, 255, 255);
 		bottom: 0;
 	}
 	.jk-footer .jk-footer-item {
@@ -329,11 +364,11 @@
 	.jk-footer .jk-footer-self img {
 		width: 0.36rem;
 	}
-	.jk-footer .jk-footer-item p{
+	.jk-footer .jk-footer-item p {
 		font-size: 0.24rem;
-		color: rgb(153,153,153);
+		color: rgb(153, 153, 153);
 	}
-	.jk-footer .jk-footer-item.active p{
-		color: rgb(44,106,220);
+	.jk-footer .jk-footer-item.active p {
+		color: rgb(44, 106, 220);
 	}
 </style>
