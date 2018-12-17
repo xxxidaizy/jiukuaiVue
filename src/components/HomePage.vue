@@ -167,61 +167,6 @@
 			</div>
 		</div>
 
-		<!--筛选 弹层-->
-		<div class="jk-screen" id="jkScreen">
-			<div class="jk-screen-box">
-				<form action="/" id="searchForm">
-					<input type="hidden" name="searchType" id="searchType" />
-					<!--筛选nav start-->
-					<div class="jk-screen-nav">
-						<!--筛选条件-->
-						<div class="jk-filter">
-							<!--区域-->
-							<div class="jk-filter-item jk-filter-area" data-show-screen="Area">
-								<span>区域 <img :src="icon_dropdown" /></span>
-							</div>
-							<!--租金-->
-							<div class="jk-filter-item jk-filter-rent" data-show-screen="Price">
-								<span>租金<img :src="icon_dropdown" /></span>
-							</div>
-							<!--户型-->
-							<div class="jk-filter-item jk-filter-houseType" data-show-screen="HouseType">
-								<span>户型 <img :src="icon_dropdown" /></span>
-							</div>
-							<!--筛选-->
-							<div class="jk-filter-item jk-filter-select" data-show-screen="Screen">
-								<span>筛选 <img :src="icon_dropdown" /></span>
-							</div>
-							<!--排序-->
-							<div class="jk-filter-item jk-filter-sort" style="margin: auto;" data-show-screen="Sort">
-								<span><img :src="icon_sort" /></span>
-							</div>
-						</div>
-					</div>
-					<!--筛选nav end-->
-					<!--区域筛选 start-->
-					<div class="jkScreenItem" id="screenArea">
-						<div class="jk-screen-box" id="jkScreenArea">
-							<!--附近 strat-->
-							<div class="jk-screen-cont">
-								<ul class="jk-screen-ui">
-									<li class="showTabItem" id="area" @click="showTab('area')">
-										区域
-									</li>
-									<input type="hidden" name="screenType" id="screenType" />
-								</ul>
-							</div>
-							<!--附近 end-->
-						</div>
-						<div class="jk-screen-btn">
-							<button class="blue-btn" type="submit">确定</button>
-						</div>
-					</div>
-					<!--区域筛选 end-->
-				</form>
-			</div>
-		</div>
-
 	</div>
 
 </template>
