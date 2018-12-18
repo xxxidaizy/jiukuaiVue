@@ -1,232 +1,341 @@
 <template>
+	<div class="jk-homepage">
+		<!--房源列表-->
+		<div class="jk-houseList">
+			<scroller :on-refresh="refresh" :on-infinite="infinite" :noDataText="noDataText" ref="my_scroller">
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
+				</div>
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
+				</div>
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
+				</div>
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
+				</div>
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
+				</div>
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
+				</div>
+			</scroller>
+		</div>
 
-	<div class="my-scroll" :class="[scrollState?'prohibit':'allow']" ref="myScroll" @scroll.passive="onScroll($event)" @touchstart="touchStart($event)" @touchmove="touchMove($event)" @touchend="touchEnd($event)">
-		<div class="scroll-top" :style="{height:top+'px'}">
-			<div v-if="aspect==2">
-				<p v-if="state==6">
-					下拉刷新
-				</p>
-				<p v-if="state==1">
-					<i><img :src="Load"/></i>
-					<br/> 刷新中
-				</p>
-				<p v-if="state==2">松开刷新</p>
-				<p v-if="state==3">
-					<i><img :src="Load"/></i>
-					<br/> 刷新完成
-				</p>
-			</div>
-		</div>
-		<!-- top -->
-		<div class="scroll-list" :style="{ transform: 'translate3d(0, ' + top + 'px, 0)'}">
-			<slot name='scrollList'></slot>
-			<div class="scroll-bottom">
-				<div v-if="state==4">加载中</div>
-				<div v-if="state==5">加载完成</div>
-				<div v-if="state==7">没有更多</div>
-			</div>
-		</div>
 	</div>
+
 </template>
-<script type="text/javascript">
-	import tween from '@/plugins/tween'
-	import Load from '@/assets/Load.gif'
+
+<script>
+	import rentImg1 from '../assets/icon-func1.png';
+	import rentImg2 from '../assets/icon-func2.png';
+	import rentImg3 from '../assets/icon-func3.png';
+	import icon_dropdown from '../assets/icon-dropdown.png';
+	import icon_sort from '../assets/icon-sort.png';
+	import bannerImg from '../assets/banner.jpg';
+	import footer_home_blue from '../assets/footer_home_blue.png';
+	import footer_publish_gray from '../assets/footer_publish_gray.png';
+	import footer_self_gray from '../assets/footer_self_gray.png';
+	import houseInfoImg from '../assets/houseInfoImg.png';
+
 	export default {
-		name: 'myScroll',
-		props: {
-			'page': {
-				type: Object, //counter:当前页  pageStart:开始页数  pageEnd:结束页数  total:总页数
-			},
-			'onRefresh': { //刷新回调
-				type: Function,
-				require: true
-			},
-			'onPull': { //加载回调
-				type: Function,
-				require: true
-			},
-			'getScrollTop': { //获取滚动条位置
-				type: Function
-			},
-			'setScrollPage': { //改变滚动条位置
-				type: Function
-			},
-			'scrollState': { //是否可滑动
-				type: Boolean,
-				require: true
-			}
-		},
+
+		name: 'HomePage',
 		data() {
 			return {
-				Load,
-				pageX: 0,
-				pageY: 0,
-				state: 0,
-				scrollPosition: 0,
-				myScroll: null,
-				myScrollList: null,
-				top: 0,
-				aspect: 0, //1:向下 2:向上
-				listHeight: 0,
+				rentImg1: rentImg1,
+				rentImg2: rentImg2,
+				rentImg3: rentImg3,
+				icon_dropdown: icon_dropdown,
+				icon_sort: icon_sort,
+				bannerImg: bannerImg,
+				footer_home_blue: footer_home_blue,
+				footer_publish_gray: footer_publish_gray,
+				footer_self_gray: footer_self_gray,
+				houseInfoImg: houseInfoImg,
+				myData:[],
+				noDataText:"--我也是有底线的--",
+
 			}
 		},
-		created() {},
-		methods: {
-			ScrollTop(top) { //修改滚动条位置
-				this.myScroll.scrollTop = top
-			},
-			/*
-			 * 刷新中：1
-			 * 松开刷新：2
-			 * 刷新完成：3
-			 * 加载中：4
-			 * 加载完成：5
-			 * 下拉刷新：6
-			 * 没有更多：7
-			 */
-			setState(index) { //修改状态
-				this.state = index
-				if(index == 5 || index == 3) {
-					setTimeout(() => {
-						this.state = 0
-						let timer = null;
-						let that = this;
-						var b = 50,
-							c = 100,
-							d = 100,
-							t = 0;
-						cancelAnimationFrame(timer);
-						timer = requestAnimationFrame(function fn() {
-							var oTop = that.top;
-							if(that.top > 0) {
-								that.top = Math.ceil(tween.Quart.easeInOut(10, oTop, 8, 10)) - 15
-								timer = requestAnimationFrame(fn);
-							} else {
-								cancelAnimationFrame(timer);
-								that.top = 0
-							}
-						});
-					}, 500)
-				}
-			},
-			touchStart(e) { //触摸事件
-				this.pageX = e.targetTouches[0].pageX
-				this.pageY = e.targetTouches[0].pageY
-			},
-			touchMove(e) { //触摸滑动事件
-				this.scrollPosition = this.myScroll.scrollTop //获取滚动条位置
-				if(this.scrollState && e.targetTouches[0].pageY > this.pageY) { //向上滑动
-					this.aspect = 2
-					if(this.myScroll.scrollTop == 0) {
-						let diff = e.targetTouches[0].pageY - this.pageY - this.scrollPosition
-						this.top = Math.pow(diff, 0.9)
-						let ranget = diff / document.body.clientHeight * 100 //计算在屏幕上滑动了多少
-						if(ranget > 20) {
-							this.state = 2
-						} else if(ranget < 15) {
-							this.state = 6
-						}
-						e.preventDefault()
-					}
-				} else if(this.scrollState && this.state != 4) { //向上滑动
-					this.aspect = 1
-				}
+		beforeCreate() {
 
-			},
-			touchEnd(e) {
-				if(this.aspect == 2 && this.state == 2 || this.state == 1) { //上拉处理
-					this.top = 100
-					this.state = 1
-					this.topCallback()
-				} else if(this.aspect == 2) {
-					this.state = 0
-					this.top = 0
-				}
-			},
-			onScroll(e) {
-				let listHeight = this.myScrollList.offsetHeight //列表总高度
-				let listScrollTop = e.target.scrollTop + this.myScroll.offsetHeight //当前滚动条位置
-
-				if(this.state == 0 && listHeight - listScrollTop < 100) {
-					this.bottomCallback()
-				}
-
-				if(this.getScrollTop) this.getScrollTop(e.target.scrollTop) //返回X，Y
-			},
-			topCallback() { //刷新回调
-				this.onRefresh(this.state)
-			},
-			bottomCallback() { //加载回调
-				if(this.state != 7) {
-					this.state = 4
-					this.onPull(this.state)
-				}
-
-			},
 		},
-		mounted() {
-			this.myScroll = this.$refs.myScroll //获取滑条dom
-			this.myScrollList = this.myScroll.children[1] //获取列表dom
+		created() {
+
+		},
+		methods: {
+			infinite:function(){
+				console.log('infinite');
+				this.timeout=setTimeout(()=>{
+					if(this.myData.length>=5){
+						this.$refs.my_scroller.finishInfinite(true);
+					}else{
+						this.$refs.my_scroller.finishInfinite(false);
+					}
+					this.myData.push(this.myData[1]);
+				},1500)
+			},
+			refresh:function(){
+				console.log("refresh");
+				this.timeout=setTimeout(()=>{
+					this.$refs.my_scroller.finishPullToRefresh();
+				},1500)
+			},
+			
 		}
 	}
 </script>
-<style lang="scss" scoped>
-	.allow {
-		overflow: hidden;
-		height: auto;
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped="scoped">
+	@import url("../css/common.css");
+	.jk-fixed {
+		position: fixed;
+		top: 0;
+		background-color: rgb(255, 255, 255);
+		padding-bottom: 0.3rem;
+	}
+	/*搜索*/
+	
+	.jk-search a {
+		margin-left: 0.1rem;
+		color: rgb(51, 51, 51);
+		text-align: center;
+		font-size: 0.28rem;
 	}
 	
-	.prohibit {
-		max-width: 100%;
-		max-height: 100%;
-		height: 100%;
-		overflow: hidden;
-		overflow-y: scroll;
-		-webkit-overflow-scrolling: touch;
-		will-change: transform;
-		transition: all 450ms;
-		backface-visibility: hidden;
-		perspective: 1000;
+	.jk-search input::-webkit-input-placeholder {
+		color: rgb(200, 200, 200);
+	}
+	/*租赁方式*/
+	
+	.jk-rent {
+		margin: auto;
+		margin-top: 0.38rem;
+		text-align: center;
 	}
 	
-	.my-scroll {
-		position: relative;
-		color: #fff;
-		.scroll-top {
-			text-align: center;
-			display: flex;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			overflow: hidden;
-			div {
-				display: flex;
-				height: auto;
-				width: 100%;
-				justify-content: center;
-				align-items: center;
-				flex-wrap: wrap;
-				i {
-					flex: 1 0 100%;
-					display: block;
-					height: 0.4rem;
-				}
-				img {
-					width: 0.6rem;
-				}
-				p {
-					flex: 1 0 100%;
-				}
-			}
-		}
-		.scroll-list {
-			overflow: hidden;
-			min-height: 100%;
-		}
-		.scroll-bottom {
-			text-align: center;
-			line-height: 40px;
-		}
+	.jk-rent .jk-rent-item,
+	.jk-filter .jk-filter-item,
+	.jk-houseList-info,
+	.jk-footer .jk-footer-item {
+		display: inline-block;
+	}
+	
+	.jk-rent a {
+		color: rgb(0, 0, 0);
+	}
+	
+	.jk-rent a img {
+		width: 0.98rem;
+		height: 0.97rem;
+	}
+	
+	.jk-rent p {
+		font-size: 0.24rem;
+		color: rgb(0, 0, 0);
+	}
+	/*筛选条件*/
+	
+	.jk-filter {
+		margin: auto;
+		margin-top: 0.4rem;
+		width: 6.84rem;
+		text-align: left;
+		padding-top: 0.34rem;
+		padding-bottom: 0.32rem;
+		border-top: 0.02rem solid rgb(214, 214, 214);
+		border-bottom: 0.02rem solid rgb(214, 214, 214);
+	}
+	
+	.jk-filter .jk-filter-item {
+		margin-right: 0.86rem;
+	}
+	
+	.jk-filter .jk-filter-item span {
+		color: rgb(51, 51, 51);
+		font-size: 0.24rem;
+	}
+	
+	.jk-filter .jk-filter-item span img {
+		width: 0.14rem;
+	}
+	
+	.jk-filter .jk-filter-sort span img {
+		width: 0.22rem;
+	}
+	/*banner*/
+	
+	.jk-banner {
+		width: 6.84rem;
+		margin: auto;
+		margin-top: 0.3rem;
+	}
+	
+	.jk-banner img {
+		width: 100%;
+	}
+	
+	/*房源列表*/
+	.jk-houseList {
+		width: 6.86rem;
+		margin: auto;
+		margin-bottom: 2rem;
+		margin-top: 6.2rem;
+	}
+	.jk-houseList-item {
+		padding-top: 0.3rem;
+		padding-bottom: 0.3rem;
+		border-top: 0.03rem solid rgb(229, 229, 229);
+	}
+	.jk-houseList-item:first-child {
+		border: none;
+	}
+	.jk-houseList-img img {
+		width: 2.41rem;
+		margin-right: 0.22rem;
+		vertical-align: bottom;
+	}
+	.jk-houseList-text .houseTitle {
+		font-size: 0.28rem;
+		color: rgb(0, 0, 0);
+		font-weight: 700;
+		margin-bottom: 0.2rem;
+	}
+	.jk-houseList-text .houseRent {
+		font-size: 0.28rem;
+		color: rgb(228, 80, 0);
+		margin-bottom: 0.1rem;
+	}
+	.jk-houseList-text .houseArea {
+		font-size: 0.22rem;
+		color: rgb(136, 136, 136);
+		margin-bottom: 0.1rem;
+	}
+	.jk-houseList-text .houseFeature {
+		font-size: 0.18rem;
+		color: rgb(136, 136, 136);
+	}
+	.jk-houseList-text .houseFeature span {
+		height: 0.3rem;
+		border: 0.01rem solid rgb(153, 153, 153);
+		padding: 0.05rem 0.11rem;
+		margin-right: 0.1rem;
+	}
+	
+	/*footer*/
+	.jk-footer {
+		height: 1.15rem;
+		width: 100%;
+		position: fixed;
+		margin: auto;
+		text-align: center;
+		background-color: rgb(255, 255, 255);
+		bottom: 0;
+	}
+	
+	.jk-footer .jk-footer-item {
+		margin: 0.18rem auto 0.16rem auto;
+	}
+	
+	.jk-footer .jk-footer-home,
+	.jk-footer .jk-footer-publish {
+		margin-right: 1.88rem;
+	}
+	
+	.jk-footer .jk-footer-home img {
+		width: 0.45rem;
+	}
+	
+	.jk-footer .jk-footer-publish img {
+		width: 0.38rem;
+	}
+	
+	.jk-footer .jk-footer-self img {
+		width: 0.36rem;
+	}
+	
+	.jk-footer .jk-footer-item p {
+		font-size: 0.24rem;
+		color: rgb(153, 153, 153);
+	}
+	
+	.jk-footer .jk-footer-item.active p {
+		color: rgb(44, 106, 220);
 	}
 </style>

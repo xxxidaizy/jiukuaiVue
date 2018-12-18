@@ -58,96 +58,98 @@
 		</div>
 		<!--房源列表-->
 		<div class="jk-houseList">
-			<div class="jk-houseList-item">
-				<div class="jk-houseList-info jk-houseList-img">
-					<img :src="houseInfoImg" />
+			<scroller :on-refresh="refresh" :on-infinite="infinite" :noDataText="noDataText" ref="my_scroller">
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
 				</div>
-				<div class="jk-houseList-info jk-houseList-text">
-					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
-					<p class="houseRent">1700/月</p>
-					<p class="houseArea">15m² | 南 | 看丹桥</p>
-					<p class="houseFeature">
-						<span>押一付一</span>
-						<span>独立卫浴</span>
-						<span>有阳台</span>
-					</p>
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="jk-houseList-item">
-				<div class="jk-houseList-info jk-houseList-img">
-					<img :src="houseInfoImg" />
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
 				</div>
-				<div class="jk-houseList-info jk-houseList-text">
-					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
-					<p class="houseRent">1700/月</p>
-					<p class="houseArea">15m² | 南 | 看丹桥</p>
-					<p class="houseFeature">
-						<span>押一付一</span>
-						<span>独立卫浴</span>
-						<span>有阳台</span>
-					</p>
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="jk-houseList-item">
-				<div class="jk-houseList-info jk-houseList-img">
-					<img :src="houseInfoImg" />
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
 				</div>
-				<div class="jk-houseList-info jk-houseList-text">
-					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
-					<p class="houseRent">1700/月</p>
-					<p class="houseArea">15m² | 南 | 看丹桥</p>
-					<p class="houseFeature">
-						<span>押一付一</span>
-						<span>独立卫浴</span>
-						<span>有阳台</span>
-					</p>
+				<div class="jk-houseList-item">
+					<div class="jk-houseList-info jk-houseList-img">
+						<img :src="houseInfoImg" />
+					</div>
+					<div class="jk-houseList-info jk-houseList-text">
+						<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
+						<p class="houseRent">1700/月</p>
+						<p class="houseArea">15m² | 南 | 看丹桥</p>
+						<p class="houseFeature">
+							<span>押一付一</span>
+							<span>独立卫浴</span>
+							<span>有阳台</span>
+						</p>
+					</div>
 				</div>
-			</div>
-			<div class="jk-houseList-item">
-				<div class="jk-houseList-info jk-houseList-img">
-					<img :src="houseInfoImg" />
-				</div>
-				<div class="jk-houseList-info jk-houseList-text">
-					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
-					<p class="houseRent">1700/月</p>
-					<p class="houseArea">15m² | 南 | 看丹桥</p>
-					<p class="houseFeature">
-						<span>押一付一</span>
-						<span>独立卫浴</span>
-						<span>有阳台</span>
-					</p>
-				</div>
-			</div>
-			<div class="jk-houseList-item">
-				<div class="jk-houseList-info jk-houseList-img">
-					<img :src="houseInfoImg" />
-				</div>
-				<div class="jk-houseList-info jk-houseList-text">
-					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
-					<p class="houseRent">1700/月</p>
-					<p class="houseArea">15m² | 南 | 看丹桥</p>
-					<p class="houseFeature">
-						<span>押一付一</span>
-						<span>独立卫浴</span>
-						<span>有阳台</span>
-					</p>
-				</div>
-			</div>
-			<div class="jk-houseList-item">
-				<div class="jk-houseList-info jk-houseList-img">
-					<img :src="houseInfoImg" />
-				</div>
-				<div class="jk-houseList-info jk-houseList-text">
-					<p class="houseTitle">合租 · 丰西北里3居室-南卧</p>
-					<p class="houseRent">1700/月</p>
-					<p class="houseArea">15m² | 南 | 看丹桥</p>
-					<p class="houseFeature">
-						<span>押一付一</span>
-						<span>独立卫浴</span>
-						<span>有阳台</span>
-					</p>
-				</div>
-			</div>
+			</scroller>
 		</div>
 		<div class="jk-footer">
 			<!--首页-->
@@ -208,6 +210,16 @@
 
 		},
 		methods: {
+			infinite:function(){
+				console.log('infinite');
+				this.timeout=setTimeout(()=>{
+					if(this.myData.length>=20){
+						this.$refs.my_scroller.finishInfinite(true);
+					}else{
+						this.$refs.my_scroller.finishInfinite(false);
+					}
+				},1500)
+			},
 			changeRentType(rentType) {
 
 			},
@@ -311,63 +323,55 @@
 	.jk-banner img {
 		width: 100%;
 	}
-	/*房源列表*/
 	
+	/*房源列表*/
 	.jk-houseList {
 		width: 6.86rem;
 		margin: auto;
 		margin-bottom: 2rem;
 		margin-top: 6.2rem;
 	}
-	
 	.jk-houseList-item {
 		padding-top: 0.3rem;
 		padding-bottom: 0.3rem;
 		border-top: 0.03rem solid rgb(229, 229, 229);
 	}
-	
 	.jk-houseList-item:first-child {
 		border: none;
 	}
-	
 	.jk-houseList-img img {
 		width: 2.41rem;
 		margin-right: 0.22rem;
 		vertical-align: bottom;
 	}
-	
 	.jk-houseList-text .houseTitle {
 		font-size: 0.28rem;
 		color: rgb(0, 0, 0);
 		font-weight: 700;
 		margin-bottom: 0.2rem;
 	}
-	
 	.jk-houseList-text .houseRent {
 		font-size: 0.28rem;
 		color: rgb(228, 80, 0);
 		margin-bottom: 0.1rem;
 	}
-	
 	.jk-houseList-text .houseArea {
 		font-size: 0.22rem;
 		color: rgb(136, 136, 136);
 		margin-bottom: 0.1rem;
 	}
-	
 	.jk-houseList-text .houseFeature {
 		font-size: 0.18rem;
 		color: rgb(136, 136, 136);
 	}
-	
 	.jk-houseList-text .houseFeature span {
 		height: 0.3rem;
 		border: 0.01rem solid rgb(153, 153, 153);
 		padding: 0.05rem 0.11rem;
 		margin-right: 0.1rem;
 	}
-	/*footer*/
 	
+	/*footer*/
 	.jk-footer {
 		height: 1.15rem;
 		width: 100%;
