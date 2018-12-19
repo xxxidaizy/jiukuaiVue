@@ -1,5 +1,6 @@
 <template>
 	<div class="jk-homepage">
+
 		<div class="jk-fixed">
 			<!--搜索框-->
 			<div class="jk-search">
@@ -168,7 +169,6 @@
 				<p>我</p>
 			</div>
 		</div>
-
 	</div>
 
 </template>
@@ -200,6 +200,8 @@
 				footer_publish_gray: footer_publish_gray,
 				footer_self_gray: footer_self_gray,
 				houseInfoImg: houseInfoImg,
+				myData:[],
+				noDataText:"--我也是有底线的--",
 
 			}
 		},
@@ -210,15 +212,22 @@
 
 		},
 		methods: {
-			infinite:function(){
+			infinite: function() {
 				console.log('infinite');
-				this.timeout=setTimeout(()=>{
-					if(this.myData.length>=20){
+				this.timeout = setTimeout(() => {
+					if(this.myData.length >= 3) {
 						this.$refs.my_scroller.finishInfinite(true);
-					}else{
+					} else {
 						this.$refs.my_scroller.finishInfinite(false);
 					}
-				},1500)
+					this.myData.push(this.myData[1]);
+				}, 1500)
+			},
+			refresh: function() {
+				console.log("refresh");
+				this.timeout = setTimeout(() => {
+					this.$refs.my_scroller.finishPullToRefresh();
+				}, 1500)
 			},
 			changeRentType(rentType) {
 
@@ -323,55 +332,63 @@
 	.jk-banner img {
 		width: 100%;
 	}
-	
 	/*房源列表*/
+	
 	.jk-houseList {
 		width: 6.86rem;
 		margin: auto;
 		margin-bottom: 2rem;
-		margin-top: 6.2rem;
+		margin-top: 6.2rem!important;
 	}
+	
 	.jk-houseList-item {
 		padding-top: 0.3rem;
 		padding-bottom: 0.3rem;
 		border-top: 0.03rem solid rgb(229, 229, 229);
 	}
+	
 	.jk-houseList-item:first-child {
 		border: none;
 	}
+	
 	.jk-houseList-img img {
 		width: 2.41rem;
 		margin-right: 0.22rem;
 		vertical-align: bottom;
 	}
+	
 	.jk-houseList-text .houseTitle {
 		font-size: 0.28rem;
 		color: rgb(0, 0, 0);
 		font-weight: 700;
 		margin-bottom: 0.2rem;
 	}
+	
 	.jk-houseList-text .houseRent {
 		font-size: 0.28rem;
 		color: rgb(228, 80, 0);
 		margin-bottom: 0.1rem;
 	}
+	
 	.jk-houseList-text .houseArea {
 		font-size: 0.22rem;
 		color: rgb(136, 136, 136);
 		margin-bottom: 0.1rem;
 	}
+	
 	.jk-houseList-text .houseFeature {
 		font-size: 0.18rem;
 		color: rgb(136, 136, 136);
 	}
+	
 	.jk-houseList-text .houseFeature span {
 		height: 0.3rem;
 		border: 0.01rem solid rgb(153, 153, 153);
 		padding: 0.05rem 0.11rem;
 		margin-right: 0.1rem;
 	}
-	
 	/*footer*/
+	
 	.jk-footer {
 		height: 1.15rem;
 		width: 100%;
